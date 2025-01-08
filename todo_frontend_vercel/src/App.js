@@ -85,6 +85,7 @@ function App() {
 
         if (editTaskId){
               fetch(`https://todo-backend-vercel-cyan.vercel.app/todos/${editTaskId}`, {
+                mode: 'no-cors',
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
@@ -104,6 +105,7 @@ function App() {
         }else{
 
               fetch('https://todo-backend-vercel-cyan.vercel.app/todos', {
+                mode: 'no-cors',
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -133,6 +135,7 @@ function App() {
   function deleteTodo(id){
 
         fetch(`https://todo-backend-vercel-cyan.vercel.app/todos/${id}`, {
+          mode: 'no-cors',
           method: 'DELETE',
         })
           .then(() => {
