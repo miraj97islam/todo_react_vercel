@@ -84,7 +84,7 @@ function App() {
   
 
         if (editTaskId){
-              fetch(`http://localhost:5000/todos/${editTaskId}`, {
+              fetch(`https://todo-backend-vercel-cyan.vercel.app/todos/${editTaskId}`, {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ function App() {
                 .catch(error => console.error('Error updating todo:', error));
         }else{
 
-              fetch('http://localhost:5000/todos', {
+              fetch('https://todo-backend-vercel-cyan.vercel.app/todos', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ function App() {
 
   function visualizeToUpdate(id){
       
-       fetch(`http://localhost:5000/todos/${id}`)
+       fetch(`https://todo-backend-vercel-cyan.vercel.app/todos/${id}`)
         .then(response => response.json())
         .then(data => setnewInput(data.task))
         .then(setEditTaskId(id))
@@ -132,7 +132,7 @@ function App() {
 
   function deleteTodo(id){
 
-        fetch(`http://localhost:5000/todos/${id}`, {
+        fetch(`https://todo-backend-vercel-cyan.vercel.app/todos/${id}`, {
           method: 'DELETE',
         })
           .then(() => {
