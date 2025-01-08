@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    .container{
+        @apply  flex flex-col items-center justify-center text-sm w-screen;
+        @apply sm:text-base;
+        @apply md:text-lg;
+        @apply lg:text-xl;
+    }
+
+    .title{
+      @apply  m-4 text-sm;
+      @apply md:text-lg;
+      @apply lg:text-xl;
+      /* @apply xl:text-2xl; */
+     /* @apply 2xl:text-5xl 2xl:m-12; */
+    
+    }
+
+    .notepad-container{
+        @apply flex flex-col items-center justify-center mb-4;
+    }
+
+    .elementInput {
+      @apply w-[calc(100vw-80px)] h-8 bg-white text-black border-2 border-gray-300 rounded-lg p-2 ;
+      @apply sm:w-[calc(100vw-100px)];
+      @apply md:w-[calc(100vw-180px)];
+      @apply lg:w-[calc(100vw-240px)];
+      @apply xl:w-[calc(100vw-400px)];
+      @apply 2xl:w-[calc(100vw-800px)]
+    }
+
+    .elementTextArea{
+      @apply  w-[calc(100vw-80px)] h-36  bg-white text-black border-2 border-gray-300 rounded-lg p-2
+    }
+    
+    .btn-save {
+      @apply w-28 h-7 m-2 text-center rounded-md bg-[#21718c] border-2 border-white text-white;
+      @apply md:w-32 md:h-8 md:rounded-lg;
+      /* @apply lg:w-40 lg:h-10;
+      @apply xl:w-52 xl:h-12 xl:text-2xl;
+      @apply 2xl:w-72 2xl:h-20 2xl:text-4xl 2xl:m-8; */
+    }
+
+    .tab-buttons{
+      @apply flex gap-6;
+    }
+
+    .tab-btn-underline{
+      @apply underline;
+    }
+    
+
+    .btn-tasks{
+        @apply w-20 text-sm pr-10;
+    }
+
+    .btn-notes{
+      @apply w-20 text-sm;
+    }
+
+    .note-item {
+      @apply w-[calc(100vw-80px)]  bg-[#01394c] text-[#F7E2DF] h-7 border overflow-hidden border-gray-300 mt-4 pl-2 pr-4  rounded-md shadow-md cursor-pointer relative;
+      @apply sm:w-[calc(100vw-100px)] sm:px-4;
+      @apply md:w-[calc(100vw-180px)] md:h-8 md:px-4;
+      @apply lg:w-[calc(100vw-240px)];
+      @apply xl:w-[calc(100vw-400px)];
+      @apply 2xl:w-[calc(100vw-800px)]
+    }
+    .note-item-content{
+        @apply overflow-hidden  text-ellipsis ;   
+    }
+    .btn-delete {
+        @apply absolute top-1 right-1 text-base bg-transparent border-none cursor-pointer max-w-fit text-red-400 font-medium;
+        @apply sm:top-1 sm:right-2;
+        @apply md:top-1 md:right-3;
+      }
+  }
