@@ -64,7 +64,7 @@ function App() {
 
     useEffect(() => {
       // fetch('http://localhost:5000/todos')
-      fetch('https://todo-backend-vercel-cyan.vercel.app/todos')
+      fetch(`${process.env.REACT_APP_BACKEND_LINK}/todos`)
         .then(response => response.json())
         .then(data => setTodoList(data))
         .catch(error => console.error('Error fetching todos:', error));
@@ -84,7 +84,7 @@ function App() {
   
 
         if (editTaskId){
-              fetch(`https://todo-backend-vercel-cyan.vercel.app/todos/${editTaskId}`, {
+              fetch(`${process.env.REACT_APP_BACKEND_LINK}/${editTaskId}`, {
                 // mode: 'no-cors',
                 method: 'PUT',
                 headers: {
@@ -104,8 +104,8 @@ function App() {
                 .catch(error => console.error('Error updating todo:', error));
         }else{
 
-              fetch('https://todo-backend-vercel-cyan.vercel.app/todos', {
-                // mode: 'no-cors',
+              fetch(`${process.env.REACT_APP_BACKEND_LINK}/todos`, {
+                mode: 'cors',
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ function App() {
 
   function visualizeToUpdate(id){
       
-       fetch(`https://todo-backend-vercel-cyan.vercel.app/todos/${id}`)
+       fetch(`${process.env.REACT_APP_BACKEND_LINK}/todos/${id}`)
         .then(response => response.json())
         .then(data => setnewInput(data.task))
         .then(setEditTaskId(id))
@@ -134,7 +134,7 @@ function App() {
 
   function deleteTodo(id){
 
-        fetch(`https://todo-backend-vercel-cyan.vercel.app/todos/${id}`, {
+        fetch(`${process.env.REACT_APP_BACKEND_LINK}/todos/${id}`, {
           // mode: 'no-cors',
           method: 'DELETE',
         })
