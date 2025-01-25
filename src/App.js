@@ -64,11 +64,7 @@ function App() {
 
     useEffect(() => {
       // fetch('http://localhost:5000/todos')
-<<<<<<< HEAD:todo_frontend_vercel/src/App.js
       fetch(`${process.env.REACT_APP_BACKEND_LINK}/todos`)
-=======
-      fetch('https://todo-backend-vercel-six.vercel.app/todos')
->>>>>>> b41bb56938f21fb2b0047bf0e7572e902a6a21fe:src/App.js
         .then(response => response.json())
         .then(data => setTodoList(data))
         .catch(error => console.error('Error fetching todos:', error));
@@ -88,11 +84,7 @@ function App() {
   
 
         if (editTaskId){
-<<<<<<< HEAD:todo_frontend_vercel/src/App.js
               fetch(`${process.env.REACT_APP_BACKEND_LINK}/${editTaskId}`, {
-=======
-              fetch(`https://todo-backend-vercel-six.vercel.app/todos/${editTaskId}`, {
->>>>>>> b41bb56938f21fb2b0047bf0e7572e902a6a21fe:src/App.js
                 // mode: 'no-cors',
                 method: 'PUT',
                 headers: {
@@ -112,12 +104,8 @@ function App() {
                 .catch(error => console.error('Error updating todo:', error));
         }else{
 
-<<<<<<< HEAD:todo_frontend_vercel/src/App.js
               fetch(`${process.env.REACT_APP_BACKEND_LINK}/todos`, {
                 mode: 'cors',
-=======
-              fetch('https://todo-backend-vercel-six.vercel.app/todos', {
->>>>>>> b41bb56938f21fb2b0047bf0e7572e902a6a21fe:src/App.js
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -135,11 +123,7 @@ function App() {
 
   function visualizeToUpdate(id){
       
-<<<<<<< HEAD:todo_frontend_vercel/src/App.js
        fetch(`${process.env.REACT_APP_BACKEND_LINK}/todos/${id}`)
-=======
-       fetch(`https://todo-backend-vercel-six.vercel.app/todos/${id}`)
->>>>>>> b41bb56938f21fb2b0047bf0e7572e902a6a21fe:src/App.js
         .then(response => response.json())
         .then(data => setnewInput(data.task))
         .then(setEditTaskId(id))
@@ -150,11 +134,7 @@ function App() {
 
   function deleteTodo(id){
 
-<<<<<<< HEAD:todo_frontend_vercel/src/App.js
         fetch(`${process.env.REACT_APP_BACKEND_LINK}/todos/${id}`, {
-=======
-        fetch(`https://todo-backend-vercel-six.vercel.app/todos/${id}`, {
->>>>>>> b41bb56938f21fb2b0047bf0e7572e902a6a21fe:src/App.js
           // mode: 'no-cors',
           method: 'DELETE',
         })
